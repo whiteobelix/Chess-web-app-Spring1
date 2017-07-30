@@ -23,16 +23,6 @@ public class ExistingMatchDAOImpl implements ExistingMatchDAO{
 				.map(me -> me.getPlayerID()).collect(Collectors.toList());		
 		return id;
 	}
-// W metodzie powyzej wyciąłem zbieranie swojego ID z moich meczów.	
-//	@Override
-//	public List<Long> getIDOfPlayerWhosCreateMatch(Long loggedPlayerID){
-//		
-//		List<Long> id = existingMatches.stream().filter(me -> loggedPlayerID.equals(me.getPlayerID()) 
-//				|| loggedPlayerID.equals(me.getOpponentForPlayerID())).map(me -> me.getPlayerID() != loggedPlayerID ?
-//						me.getPlayerID() : me.getOpponentForPlayerID()).collect(Collectors.toList());
-//		
-//		return id;
-//	}
 
 	@Override
 	public List<Long> getIDOfPlayerFromOpponentMatch(Long loggedPlayerID){//wyzwania rzucone przeze mnie

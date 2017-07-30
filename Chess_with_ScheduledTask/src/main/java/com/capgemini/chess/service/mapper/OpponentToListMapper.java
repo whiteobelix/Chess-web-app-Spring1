@@ -23,6 +23,11 @@ public class OpponentToListMapper {
 		return opponentToListTO;
 	}
 
+	
+	
+	//TODO To delete
+	//TODO To delete
+	//TODO To delete
 	public static UserEntity userEntityMapper(OpponentToListTO opponentToListTO) {
 		UserEntity userEntity = new UserEntity();
 		StatsEntity statsEntity = new StatsEntity();

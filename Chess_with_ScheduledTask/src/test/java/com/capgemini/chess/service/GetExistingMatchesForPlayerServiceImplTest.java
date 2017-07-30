@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Matchers;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
@@ -29,7 +30,7 @@ ExistingMatchDAO existingMatches;
 MatchPropositionDAO matchPropositions;
 
 @Test
-public void shouldReturnTrueIfXXX(){
+public void shouldReturnTwoExistingMatchesForUser(){
 	
 	//given
 	ActualUserIDTO actualUserIDTO = new ActualUserIDTO();
@@ -38,20 +39,43 @@ public void shouldReturnTrueIfXXX(){
 	List<Long> usersIDs = addUsersIDs();
 	List <OpponentToListTO> matches = addMatches();
 	
-	
 	when(existingMatches.getIDOfPlayerFromOpponentMatch(actualUserIDTO.getId())).thenReturn(usersIDs);
-	when(matchPropositions.opponentsByID(usersIDs)).thenReturn(matches);	
+	when(matchPropositions.opponentsByID(Matchers.anyListOf(Long.class))).thenReturn(matches);	
 	
 	GetExistingMatchesForPlayerService getExistingMatchesForPlayerService = new GetExistingMatchesForPlayerServiceImpl(existingMatches, matchPropositions);
-	
 	//when
 	matches = getExistingMatchesForPlayerService.getExistingMatchesForPlayer(actualUserIDTO);
 	
 	//then
-	System.out.println(matches);
 	assertEquals(2, matches.size());
+	assertNotEquals(0, matches.size());
+	}
+
+@Test
+public void shouldReturnExistingMatchesForUser(){
+	
+	//given
+	ActualUserIDTO actualUserIDTO = new ActualUserIDTO();
+	actualUserIDTO.setId(1L);
+	
+	List<Long> usersIDs = new ArrayList <>();
+	List <OpponentToListTO> matches = new ArrayList<>();
+	
+	when(existingMatches.getIDOfPlayerFromOpponentMatch(actualUserIDTO.getId())).thenReturn(usersIDs);
+	when(matchPropositions.opponentsByID(Matchers.anyListOf(Long.class))).thenReturn(matches);	
+	
+	GetExistingMatchesForPlayerService getExistingMatchesForPlayerService = new GetExistingMatchesForPlayerServiceImpl(existingMatches, matchPropositions);
+	//when
+	matches = getExistingMatchesForPlayerService.getExistingMatchesForPlayer(actualUserIDTO);
+	
+	//then
+	assertEquals(0, matches.size());
 	
 	}
+
+
+
+
 
 	List<Long> addUsersIDs(){
 		List <Long> usersIDs = new ArrayList<>();

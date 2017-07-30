@@ -1,3 +1,6 @@
+//TODO To delete
+//TODO To delete
+//TODO To delete
 package com.capgemini.chess.service;
 
 import static org.junit.Assert.assertNotNull;

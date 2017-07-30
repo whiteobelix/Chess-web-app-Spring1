@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import com.capgemini.chess.dao.ExistingMatchDAO;
 import com.capgemini.chess.dao.MatchPropositionDAO;
 import com.capgemini.chess.dao.UserPublicProfileDAO;
-import com.capgemini.chess.dao.impl.UserPublicProfileDAOImpl;
 import com.capgemini.chess.service.GetMatchPropositionsForPlayerService;
 import com.capgemini.chess.service.to.ActualUserIDTO;
 import com.capgemini.chess.service.to.OpponentToListTO;
