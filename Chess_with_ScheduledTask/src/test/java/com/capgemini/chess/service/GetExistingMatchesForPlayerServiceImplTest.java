@@ -33,23 +33,14 @@ public void shouldReturnTrueIfXXX(){
 	
 	//given
 	ActualUserIDTO actualUserIDTO = new ActualUserIDTO();
-	actualUserIDTO.setId(124L);
+	actualUserIDTO.setId(1L);
 	
 	List<Long> usersIDs = addUsersIDs();
+	List <OpponentToListTO> matches = addMatches();
 	
-	List<OpponentToListTO> matches = new ArrayList<>();
-	OpponentToListTO someOpponent1 = new OpponentToListTO();
-	someOpponent1.setId(100L);
-	OpponentToListTO someOpponent2 = new OpponentToListTO();
-	someOpponent2.setId(123L);
-	OpponentToListTO someOpponent3 = new OpponentToListTO();
-	someOpponent3.setId(1111L);
-	matches.add(someOpponent1);
-	matches.add(someOpponent2);
-	matches.add(someOpponent3);
 	
-	//when(existingMatches.getIDOfPlayerFromOpponentMatch(actualUserIDTO.getId())).thenReturn(usersIDs);
-	//when(matchPropositions.opponentsByID(usersIDs)).thenReturn(matches);	
+	when(existingMatches.getIDOfPlayerFromOpponentMatch(actualUserIDTO.getId())).thenReturn(usersIDs);
+	when(matchPropositions.opponentsByID(usersIDs)).thenReturn(matches);	
 	
 	GetExistingMatchesForPlayerService getExistingMatchesForPlayerService = new GetExistingMatchesForPlayerServiceImpl(existingMatches, matchPropositions);
 	
@@ -57,22 +48,29 @@ public void shouldReturnTrueIfXXX(){
 	matches = getExistingMatchesForPlayerService.getExistingMatchesForPlayer(actualUserIDTO);
 	
 	//then
-	int i =1;
 	System.out.println(matches);
-	assertEquals(3, matches.size());
+	assertEquals(2, matches.size());
 	
 	}
 
-	private List<Long> addUsersIDs(){
+	List<Long> addUsersIDs(){
 		List <Long> usersIDs = new ArrayList<>();
-		usersIDs.add(100L);
-		usersIDs.add(123L);
-		usersIDs.add(1111L);
+		usersIDs.add(11L);
+		usersIDs.add(12L);
 		return usersIDs;
 	}
 
-
-
+	List <OpponentToListTO> addMatches (){
+	List<OpponentToListTO> matches = new ArrayList<>();
+	
+	OpponentToListTO someOpponent1 = new OpponentToListTO();
+	someOpponent1.setId(11L);
+	OpponentToListTO someOpponent2 = new OpponentToListTO();
+	someOpponent2.setId(12L);
+	matches.add(someOpponent1);
+	matches.add(someOpponent2);
+	return matches;
+	}
 
 
 

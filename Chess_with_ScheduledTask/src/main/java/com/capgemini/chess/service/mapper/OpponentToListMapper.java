@@ -1,5 +1,6 @@
 package com.capgemini.chess.service.mapper;
 
+import com.capgemini.chess.dataaccess.entities.StatsEntity;
 import com.capgemini.chess.dataaccess.entities.UserEntity;
 import com.capgemini.chess.service.to.OpponentToListTO;
 
@@ -22,4 +23,21 @@ public class OpponentToListMapper {
 		return opponentToListTO;
 	}
 
+	public static UserEntity userEntityMapper(OpponentToListTO opponentToListTO) {
+		UserEntity userEntity = new UserEntity();
+		StatsEntity statsEntity = new StatsEntity();
+
+		userEntity.setId(opponentToListTO.getId());
+		userEntity.setLogin(opponentToListTO.getLogin());
+		userEntity.setName(opponentToListTO.getName());
+		userEntity.setSurname(opponentToListTO.getSurname());
+		userEntity.setStats(statsEntity.setLevel(opponentToListTO.getLevel()));
+		opponentToListTO.setPoints(userEntity.getPoints());
+		opponentToListTO.setPlayed(userEntity.getStats().getPlayed());
+		opponentToListTO.setWon(userEntity.getStats().getWon());
+		opponentToListTO.setDrawn(userEntity.getStats().getDrawn());
+		opponentToListTO.setLoss(userEntity.getStats().getLoss());
+
+		return userEntity;
+	}
 }

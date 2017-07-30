@@ -39,10 +39,6 @@ import com.capgemini.chess.service.to.*;
 public class UserFunctionServiceImplTest {
 
 		@Mock
-		ExistingMatchDAO existingMatches;
-		
-		@Mock
-		MatchPropositionDAO 
 
 		@Configuration
 		static class RankServiceTestContextConfiguration {
