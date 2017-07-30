@@ -1,11 +1,16 @@
 package com.capgemini.chess.service.to;
 
-public class OpponentToListTO {//TO do pokazywania info o graczu na liście meczów
-	private Long id; //id jakiegoś gracza
+/**
+ * OpponentToListTO contains fields needed for match details showing and processing.
+ * @author PMUNTOWS
+ *
+ */
+public class OpponentToListTO {
+	private Long id;
 	private String login;
 	private String Name;
 	private String Surname;
-	private Long level; //dodać w serwisie liczącym punkty
+	private Long level;
 	private Long points;
 	private Long played;
 	private Long won;

@@ -6,7 +6,11 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Entity;
-
+/**
+ * Entity of match
+ * @author PMUNTOWS
+ *
+ */
 @Entity
 public class MatchEntity {
 

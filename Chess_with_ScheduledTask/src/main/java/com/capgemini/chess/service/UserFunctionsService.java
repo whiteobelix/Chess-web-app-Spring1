@@ -6,9 +6,18 @@ import com.capgemini.chess.service.to.ActualUserIDTO;
 import com.capgemini.chess.service.to.MatchTO;
 import com.capgemini.chess.service.to.OpponentToListTO;
 
+/**
+ * Fasade provide three public methods in the chess game for logged user.
+ * Each user have specific ID.
+ * 
+ * @author Pawel Muntowski
+ *
+ */
 public interface UserFunctionsService {
-	List<OpponentToListTO> getMatches(ActualUserIDTO actualUser); //ok
-	OpponentToListTO showPublicProfile(Long opponentID); //ok
-	MatchTO createNewMatch(Long playerID, Long opponentID); //TODO
-	
+	List<OpponentToListTO> getMatches(ActualUserIDTO actualUser);
+
+	OpponentToListTO showPublicProfile(Long opponentID);
+
+	MatchTO createNewMatch(Long playerID, Long opponentID);
+
 }

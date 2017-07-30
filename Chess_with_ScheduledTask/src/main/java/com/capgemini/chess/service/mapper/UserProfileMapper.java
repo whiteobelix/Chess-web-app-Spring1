@@ -5,8 +5,12 @@ import java.util.stream.Collectors;
 
 import com.capgemini.chess.dataaccess.entities.UserEntity;
 import com.capgemini.chess.service.to.UserProfileTO;
-
-public class UserProfileMapper {//mapuje wszystkie pola Usera
+/**
+ * Mapper gives userProfileTO including password and email
+ * @author PMUNTOWS
+ *
+ */
+public class UserProfileMapper {
 	
 	public static UserProfileTO map(UserEntity userEntity) {
 		if (userEntity != null) {

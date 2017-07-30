@@ -13,7 +13,11 @@ import com.capgemini.chess.service.to.MatchTO;
 import com.capgemini.chess.service.UserFunctionsService;
 import com.capgemini.chess.service.to.ActualUserIDTO;
 import com.capgemini.chess.service.to.OpponentToListTO;
-
+/**
+ * Contains fasade methods implementations
+ * @author PMUNTOWS
+ *
+ */
 @Service
 public class UserFunctionsServiceImpl implements UserFunctionsService{
 
@@ -31,9 +35,8 @@ public class UserFunctionsServiceImpl implements UserFunctionsService{
 	@Override
 	public List<OpponentToListTO> getMatches(ActualUserIDTO actualUser) {
 		List<OpponentToListTO> matchesList = new ArrayList<>();
-		matchesList.addAll(getExistingMatchesForPlayerService.getExistingMatchesForPlayer(actualUser));//najpierw na liście będą mecze istniejące
-		matchesList.addAll(getMatchPropositionsForPlayerService.getMatchPropositionsForPlayer(actualUser));//później na liście będą propozycje 
-		//łączy listy
+		matchesList.addAll(getExistingMatchesForPlayerService.getExistingMatchesForPlayer(actualUser));
+		matchesList.addAll(getMatchPropositionsForPlayerService.getMatchPropositionsForPlayer(actualUser));
 	
 		return matchesList;
 	}	
@@ -45,7 +48,6 @@ public class UserFunctionsServiceImpl implements UserFunctionsService{
 	
 	@Override
 	public MatchTO createNewMatch(Long userID, Long opponentID) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	

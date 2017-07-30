@@ -1,8 +1,12 @@
 package com.capgemini.chess.service.to;
 
 import com.capgemini.chess.status.Status;
-
-public class MatchTO {//transportuje info o ID graczy w istniejącym meczu i status tego meczu, ew. jeszcze ID meczu
+/**
+ * MatchTO class contains fields of match
+ * @author PMUNTOWS
+ *
+ */
+public class MatchTO {
 	Long matchID;
 	Long playerID;
 	Long opponentForPlayerID;

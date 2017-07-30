@@ -1,8 +1,12 @@
 package com.capgemini.chess.status;
-
+/**
+ * Class Status represents possible status of match.
+ * @author PMUNTOWS
+ *
+ */
 public enum Status {
-	received, // otrzymane
-	awaiting, // wysłane - oczekujące
-	finished, // zakończone
-	started; // w trkacie gry
+	received,
+	awaiting,
+	finished,
+	started;
 }

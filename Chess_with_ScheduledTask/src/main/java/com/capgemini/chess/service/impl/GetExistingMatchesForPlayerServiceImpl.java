@@ -10,11 +10,13 @@ import com.capgemini.chess.dao.MatchPropositionDAO;
 import com.capgemini.chess.service.GetExistingMatchesForPlayerService;
 import com.capgemini.chess.service.to.ActualUserIDTO;
 import com.capgemini.chess.service.to.OpponentToListTO;
-
+/**
+ * 
+ * @author PMUNTOWS
+ *
+ */
 @Service
 public class GetExistingMatchesForPlayerServiceImpl implements GetExistingMatchesForPlayerService{
-	//////pobierz rekordy z dao meczów i z parsera osób;
-	//////getMatchesForPlayer(userId)
 
 	ExistingMatchDAO existingMatches;
 	MatchPropositionDAO matchPropositions;
@@ -24,10 +26,9 @@ public class GetExistingMatchesForPlayerServiceImpl implements GetExistingMatche
 		this.existingMatches = existingMatches;
 		this.matchPropositions = matchPropositions;
 	}
-
-	// metoda 1.: dla podanego ID pobierz mecze (DAO meczu) dla tego ID   NAPISAĆ DAO MECZU
-	// metoda 2.: dla ID z podanych meczów pobierz infomacje o graczach   NAPISAC DAO GRACZA (BEZ HASŁA ITP)
-	
+	/**
+	 * Method for providing existing matches for actual user.
+	 */
 	@Override
 	public List<OpponentToListTO> getExistingMatchesForPlayer(ActualUserIDTO actualUser) {
 		

@@ -1,11 +1,21 @@
 package com.capgemini.chess.dataaccess.entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+/**
+ * Entity of user statistics
+ * @author PMUNTOWS
+ *
+ */
+@Entity
 public class StatsEntity {
 
+	@Id
 	private Long userID;
-	//String login;
-	//String name;
+	@Column
 	private Long level;
+	@Column
 	private Long points;
 	private Long played;
 	private Long won;

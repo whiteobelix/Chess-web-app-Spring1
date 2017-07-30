@@ -3,7 +3,12 @@ package com.capgemini.chess.service.to;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class UserProfileTO { //transportuje wszystkie pola Usera
+/**
+ * Class contains fields needed to logging
+ * @author PMUNTOWS
+ *
+ */
+public class UserProfileTO {
 	
 	private long id;
 	private String login;

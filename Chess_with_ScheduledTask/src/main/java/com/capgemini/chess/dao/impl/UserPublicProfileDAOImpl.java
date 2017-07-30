@@ -16,6 +16,9 @@ public class UserPublicProfileDAOImpl implements UserPublicProfileDAO{
 
 	Map<Long, UserEntity> opponentProfile = new HashMap<>();
 
+	/**
+	 * Gives opponent TO for given ID with public informations (excluding password and email). 
+	 */
 	@Override
 	public OpponentToListTO showPublicProfile(Long opponentID) {
 		

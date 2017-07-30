@@ -7,6 +7,11 @@ import com.capgemini.chess.service.to.OpponentToListTO;
 
 public interface GetMatchPropositionsForPlayerService {
 
+	/**
+	 * Method for getting match propositions for actual user.
+	 * @param actualUser
+	 * @return List<OpponentToListTO
+	 */
 	List<OpponentToListTO> getMatchPropositionsForPlayer(ActualUserIDTO actualUser);
 
 }

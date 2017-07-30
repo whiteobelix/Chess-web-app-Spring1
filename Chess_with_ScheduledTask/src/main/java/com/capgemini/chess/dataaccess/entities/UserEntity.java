@@ -5,7 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
-
+/**
+ * User entity contains all user fields
+ * @author PMUNTOWS
+ *
+ */
 @Entity
 public class UserEntity {
 

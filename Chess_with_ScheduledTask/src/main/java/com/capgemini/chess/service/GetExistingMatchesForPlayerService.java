@@ -6,7 +6,10 @@ import com.capgemini.chess.service.to.ActualUserIDTO;
 import com.capgemini.chess.service.to.OpponentToListTO;
 
 public interface GetExistingMatchesForPlayerService {
-	//mecze wysłane
-	//mecze otrzymane (wezwania od przeciwników)
+	/**
+	 * Method for getting existing match for actual user.
+	 * @param actualUser
+	 * @return List<OpponentToListTO>
+	 */
 	List<OpponentToListTO> getExistingMatchesForPlayer(ActualUserIDTO actualUser);
 }

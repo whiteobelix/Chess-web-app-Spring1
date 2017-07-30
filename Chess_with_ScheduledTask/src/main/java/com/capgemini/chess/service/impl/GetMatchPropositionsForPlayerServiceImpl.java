@@ -12,7 +12,11 @@ import com.capgemini.chess.dao.UserPublicProfileDAO;
 import com.capgemini.chess.service.GetMatchPropositionsForPlayerService;
 import com.capgemini.chess.service.to.ActualUserIDTO;
 import com.capgemini.chess.service.to.OpponentToListTO;
-
+/**
+ * Contains method for providing match propositions for actual user.
+ * @author PMUNTOWS
+ *
+ */
 @Service
 public class GetMatchPropositionsForPlayerServiceImpl implements GetMatchPropositionsForPlayerService{
 
@@ -26,7 +30,9 @@ public class GetMatchPropositionsForPlayerServiceImpl implements GetMatchProposi
 		this.matchPropositionDAO = matchPropositionDAO;
 		this.userProfileDAO = userProfileDAO;
 	}
-	
+	/**
+	 * Method for providing match propositions for actual user with some experience level.
+	 */
 	@Override
 	public List<OpponentToListTO> getMatchPropositionsForPlayer(ActualUserIDTO actualUser) {
 		Long propositionsLimit = 5L;
